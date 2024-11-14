@@ -170,7 +170,7 @@ u8 bi_sd_dma_to_rom(void *dst, int slen) {
 
         slen--;
 
-        (u8*) dst += 512;
+        dst = (u8*) dst + 512;
 
     }
 
@@ -200,7 +200,7 @@ u8 bi_sd_dma_rd(void *dst, int slen) {
 
 
         slen--;
-        (u8*) dst += 512;
+        dst = (u8*) dst + 512;
     }
 
     return 0;
@@ -274,7 +274,7 @@ u8 bi_eep_read(void *dst, u16 addr, u16 len) {
 
     while (len--) {
         bi_eep_read_dw(dst, addr++);
-        (u8*) dst += 8;
+        dst = (u8*) dst + 8;
     }
 
     return 0;
@@ -288,7 +288,7 @@ u8 bi_eep_write(void *src, u16 addr, u16 len) {
 
     while (len--) {
         bi_eep_write_dw(src, addr++);
-        (u8 *) src += 8;
+        src = (u8*) src + 8;
     }
 
     return 0;
