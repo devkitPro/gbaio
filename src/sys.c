@@ -79,8 +79,8 @@ void gLoadFont(u16 *dst, u16 bg) {
                 dst[x / 4] |= (font_val & 128) == 0 ? bg : 0xf000;
                 font_val <<= 1;
             }
-            *dst++;
-            *dst++;
+            dst++;
+            dst++;
         }
 
     }
