@@ -20,8 +20,8 @@
 void sysInit();
 void sysFillRam(void *addr, u16 val, u32 len);
 void gCleanScreen();
-void gAppendString(u8 *str);
-void gConsPrint(u8 *str);
+void gAppendString(char *str);
+void gConsPrint(char *str);
 void gSetXY(u8 x, u8 y);
 void gAppendHex8(u8 num);
 void gAppendHex16(u16 num);

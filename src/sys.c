@@ -101,7 +101,7 @@ void gSetXY(u8 x, u8 y) {
     g_scr_ptr = (u16 *) (SCREEN_BUFF + (x + y * PLAN_W) * 2);
 }
 
-void gConsPrint(u8 *str) {
+void gConsPrint(char *str) {
 
     u32 y = (((u32) g_scr_ptr) - SCREEN_BUFF) / (PLAN_W * 2);
 
@@ -112,7 +112,7 @@ void gConsPrint(u8 *str) {
 }
 
 
-void gAppendString(u8 *str) {
+void gAppendString(char *str) {
 
     u16 max_len = 30;
     while (*str != 0 && max_len-- != 0) {
@@ -126,7 +126,7 @@ void gAppendString(u8 *str) {
 void gAppendHex8(u8 num) {
 
     u8 val;
-    u8 buff[3];
+    char buff[3];
     buff[2] = 0;
 
     val = num >> 4;

@@ -35,7 +35,7 @@ u8 diskTest() {
 
     u8 resp;
     u8 buff[512];
-    u32 offset;
+    u32 offset=0;
 
     resp = diskInit();
     if (resp)return resp;
@@ -55,11 +55,11 @@ u8 diskTest() {
     gAppendHex16(offset);
     gConsPrint("boot sector content: ");
     gConsPrint("------------------------------");
-    gConsPrint(&buff[3]); //MSDOS...
-    gConsPrint(&buff[0x47]); //print partition name
-    gConsPrint(&buff[0x1AE]); //disk error message
-    gConsPrint(&buff[0x1AE + 30]);
-    gConsPrint(&buff[0x1AE + 60]);
+    gConsPrint((char*)&buff[3]); //MSDOS...
+    gConsPrint((char*)&buff[0x47]); //print partition name
+    gConsPrint((char*)&buff[0x1AE]); //disk error message
+    gConsPrint((char*)&buff[0x1AE + 30]);
+    gConsPrint((char*)&buff[0x1AE + 60]);
     gConsPrint("------------------------------");
     
 
