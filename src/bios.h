@@ -53,12 +53,16 @@ void bi_dma_mem(void *src, void *dst, int len);
 
 void bi_sd_cmd_wr(u8 data);
 u8 bi_sd_cmd_rd();
+u8 bi_sd_cmd_val();
 void bi_sd_dat_wr(u8 data);
 u8 bi_sd_dat_rd();
 u8 bi_sd_dma_rd(void *dst, int slen);
+u8 bi_sd_dma_wr(void *src);
 
 void bi_sd_mode(u8 mode);
 void bi_sd_speed(u8 speed);
+
+void bi_sd_read_crc_ram(void *dst);
 
 u8 bi_eep_write(void *src, u16 addr, u16 len);
 u8 bi_eep_read(void *dst, u16 addr, u16 len);
